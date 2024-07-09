@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./mixin/index";
+@import "./vars/index";
+
+header,
+footer {
+    background-color: $backgroundColor;
+}
+
+header {
+    border-bottom: 1px solid #E5D9E9;
+}
+
+footer {
+    border-top: 1px solid #E5D9E9;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 18px;
+}
+
+ul li {
+    // font-size: 16px;
+}
+
+.elementWidth {
+    @include windowWidth();
+}
+
+@import "./components/footer/footer";
