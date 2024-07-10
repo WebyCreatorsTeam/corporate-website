@@ -1,11 +1,22 @@
-import Image from "next/image";
+// import Image from "next/image";
+import About from "./ui/components/About/About";
+import Hero from "./ui/components/MainPageComponents/Hero";
+import Services from "./ui/components/Services/Services";
 
 export default function Home() {
   return (
     <main>
-      <p>
-      פרעעקפרםחקםרחק
-      </p>
+      <Hero />
+      <section className='top-elements-bkg'>
+        <About />
+        <Services />
+      </section>
+      <section className='middle-elements-bkg'>
+
+      </section>
+      <section className='bottom-elements-bkg'>
+
+      </section>
     </main>
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     //   <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">

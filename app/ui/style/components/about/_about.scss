@@ -1,0 +1,32 @@
+.about {
+    padding: 2% 0%;
+
+    @media screen and (max-width: 768px) {
+        padding: 5% 0%;
+    }
+
+    &__info {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 0.5fr;
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+
+        &--text {
+            text-align: start;
+            // background-color: aqua;
+            width: 90%;
+
+            @media screen and (max-width: 768px) {
+                text-align: center;
+            }
+
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}

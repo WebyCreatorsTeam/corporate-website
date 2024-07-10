@@ -17,7 +17,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
           <NavBar />
         </header>
         <main>
-          <div className="elementWidth">
+          <div>
             {children}
           </div>
         </main>
