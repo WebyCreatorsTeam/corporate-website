@@ -14,7 +14,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     <html lang="he">
       <body className={openSans.className} dir="rtl">
         <header>
-          <NavBar />
+          {/* <NavBar /> */}
         </header>
         <main>
           <div>

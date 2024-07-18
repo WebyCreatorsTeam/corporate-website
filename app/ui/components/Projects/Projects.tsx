@@ -1,22 +1,17 @@
-import { getProjects } from "@/app/lib/data"
-import Skeleton from "./Skeleton"
+import { Suspense } from "react"
+import ProjectsList from "./ProjectsList"
+import ProjectsCardsSkeleton from "./ProjectsCardsSkeleton"
 
 const ProjectsSection = async () => {
-    const projects = await getProjects()
     return (
-        <div>
+        <section className="projectsSection">
             <h2>פרויקטים</h2>
-            { projects &&
-                projects.map((project, index) => (
-                    <div key={index}>
-                        <div>
-                            <h3>{project.name}</h3>
-                            {/* <Skeleton/> */}
-                        </div>
-                    </div>
-                ))
-            }
-        </div>
+            <div className="elementWidth projectsSection__projects">
+                <Suspense fallback={<ProjectsCardsSkeleton />}>
+                    <ProjectsList />
+                </Suspense>
+            </div>
+        </section>
     )
 }
 
