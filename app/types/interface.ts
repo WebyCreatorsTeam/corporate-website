@@ -7,3 +7,15 @@ export interface IProject {
     _id: string
     draft: boolean
 }
+
+export interface IPost {
+    _id: string
+    tldr: string
+    title: string
+    content: string
+    draft: boolean
+    coverImg: string
+    smallImg: string 
+    createdAt: string
+    updatedAt: string
+}

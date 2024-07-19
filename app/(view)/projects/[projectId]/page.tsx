@@ -1,4 +1,5 @@
-import { getOneProject } from '@/app/lib/data';
+// import { getOneProject } from '@/app/lib/data';
+import { getOneProject } from '@/app/lib/data/projects/project.data';
 import Image from 'next/image';
 import React, { FC } from 'react'
 
@@ -8,7 +9,7 @@ interface IPageProject {
 const page: FC<IPageProject> = async ({ params }) => {
     const { projectId } = params;
     const project = await getOneProject(projectId)
-    console.log(project)
+
     return (
         <>
             <Image src={project!.urlImage} alt={project!.name} width={600} height={300} />

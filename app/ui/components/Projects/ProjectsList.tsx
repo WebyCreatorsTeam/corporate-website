@@ -1,7 +1,8 @@
-import { getProjects } from '@/app/lib/data'
+// import { getProjects } from '@/app/lib/data'
 import React from 'react'
 import ProjectCard from './ProjectCard'
 import { notFound } from 'next/navigation';
+import { getProjects } from '@/app/lib/data/projects/project.data';
 
 const ProjectsList = async () => {
     const projects = await getProjects()
