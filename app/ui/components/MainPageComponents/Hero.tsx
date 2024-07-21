@@ -40,6 +40,7 @@ const Hero = () => {
                     width={720}
                     height={371}
                     className='hidden lg:block'
+                    priority
                 />
                 <Image
                     src="/images/hero/hero-mobile.webp"
@@ -47,6 +48,7 @@ const Hero = () => {
                     width={360}
                     height={185}
                     className='block lg:hidden'
+                    priority
                 />
             </section>
         </section>

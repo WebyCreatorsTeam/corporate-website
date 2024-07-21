@@ -1,0 +1,142 @@
+header {
+    // animation: ;
+    transition: 0.2s;
+    height: 80px;    
+    display: flex;
+
+    @media screen and (min-width: 768px) {
+        height: 100px;
+    }
+}
+
+nav {
+    position: relative;
+    display: flex;
+
+    .navigation { 
+        position: absolute;
+        top: 80px;
+        background-color: $sectionEggColor;
+        
+        @media screen and (min-width: 768px) {
+            position:static;
+            background-color:transparent;
+        }
+    }
+}
+
+
+// nav {
+//     width: 100%;
+//     // background-color: $sectionEggColor;
+//     z-index: 1000;
+//     // border-bottom: 1px solid #bfbfbf;
+//     position: sticky;
+//     top: 0;
+// }
+
+// .navigation {
+//     @include windowWidth;
+//     display: grid;
+//     grid-template-columns: 1fr 2fr 1fr;
+//     align-items: center;
+//     justify-items: center;
+//     height: 80px;
+//     position: relative;
+
+//     @media screen and (min-width: 768px) {
+//         position: static;
+//         font-size: 18px;
+//         justify-items: start;
+//         grid-template-columns: 1fr 5fr 1fr;
+//         margin: 0% 3%;
+//     }
+
+//     @media screen and (min-width: 1440px) {
+//         margin: 0 auto;
+//     }
+
+//     &__links,
+//     &__menu {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         z-index: 100;
+//     }
+
+//     &__menu {
+//         position: absolute;
+//         box-sizing: border-box;
+//         padding: 10% 0%;
+//         top: 80px;
+//         right: 0;
+//         width: 80%;
+//         height: calc(100vh - 80px);
+//         background-color: $sectionEggColor;
+//         border: 1px solid #E5D9E9;
+//         box-shadow: 0px 2px 7px 1px #E5D9E9;
+
+//         @media screen and (min-width: 768px) {
+//             top: 0;
+//         }
+//     }
+
+//     &__links {
+//         box-sizing: border-box;
+//         padding: 20% 0%;
+//         height: 70%;
+//         justify-content: space-between;
+
+//         @media screen and (min-width: 768px) {
+//             flex-direction: row;
+//             padding: 0% 0%;
+//             width: 70%;
+//             margin: 0% 5%;
+//         }
+
+//         @media screen and (min-width: 1200px) {
+//             width: 50%;
+//             margin: 0% 3%;
+//         }
+
+//         @media screen and (min-width: 1400px) {
+//             width: 45%;
+//         }
+//     }
+
+//     &__contact {
+//         height: 30%;
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+
+//         @media screen and (min-width: 768px) {
+//             width: 100%;
+//             justify-content: flex-end;
+//         }
+
+//         a {
+//             color: $purpleColor;
+//             font-weight: bold;
+//             padding: 2% 5%;
+//             border-radius: 8px;
+//             border: 2px solid $purpleColor;
+//         }
+//     }
+
+//     a {
+//         font-size: 20px;
+
+//         @media screen and (min-width: 768px) {
+//             font-size: 18px;
+//         }
+//     }
+
+//     &__logo {
+//         img {
+//             width: 170px;
+//             height: 100%;
+//         }
+//     }
+// }

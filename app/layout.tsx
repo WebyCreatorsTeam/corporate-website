@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./ui/style/global.scss";
 import { openSans } from "./ui/fonts/fonts";
 import Footer from "./ui/components/Footer";
-import NavBar from "./ui/components/NavBar";
+import NavBar from "./ui/components/NavBar/NavBar";
 
 export const metadata: Metadata = {
   title: "Weby Team",
@@ -13,13 +13,11 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="he">
       <body className={openSans.className} dir="rtl">
-        <header>
-          <NavBar />
-        </header>
+        <NavBar />
         <main>
-          <div>
+          {/* <div> */}
             {children}
-          </div>
+          {/* </div> */}
         </main>
         <Footer />
       </body>
