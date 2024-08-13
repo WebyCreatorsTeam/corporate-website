@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import { suezOne } from '../../fonts/fonts'
 
 const About = () => {
     return (
