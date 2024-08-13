@@ -4,7 +4,7 @@ import React from 'react'
 
 const Logo = () => {
     return (
-        <Link href="/">
+        <Link href="/" title="מעבר לעמוד הבית">
             <Image
                 src="/logo2_without_bkgr.svg"
                 alt="Weby Team Logo"

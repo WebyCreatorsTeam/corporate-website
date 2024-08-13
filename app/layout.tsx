@@ -15,11 +15,10 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       <body className={openSans.className} dir="rtl">
         <NavBar />
         <main>
-          {/* <div> */}
             {children}
-          {/* </div> */}
         </main>
         <Footer />
+        {/* <script src="https://cdn.enable.co.il/licenses/enable-L28217bliq9wyu18-0724-61784/init.js"></script> */}
       </body>
     </html>
   );

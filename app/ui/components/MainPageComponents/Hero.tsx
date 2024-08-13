@@ -1,45 +1,50 @@
 import Image from 'next/image'
 import React from 'react'
-import { suezOne } from '../../fonts/fonts'
 import Link from 'next/link'
 
 const Hero = () => {
-    // ${suezOne.className}
     return (
-        <section className={` hero elementWidth`}>
+        <section className={`hero elementWidth`}>
             <section className={`hero__textSection`}>
-                <div>
-                    <p>יש לכם עסק? מיזם? סטארטפ?</p>
-                    <p>צריכים לשפר את האתר שלכם?</p>
-                </div>
                 <h1>
-                    בואו לבנות את האתר שלכם
+                    בואו לבנות את ה
+                    <span>אתר</span>{" "}
+                    שלכם
                     <br />
                     שיקח אתכם צעד אחד
                     <span>
-                        {" "}                 קדימה
+                        {" "}קדימה
                     </span>
                 </h1>
-
-                <button>
-                    <Link
-                        href="/"
-                        // smooth={true}
-                        // offset={50}
-                        // duration={500}
-                        >
-                        כתבו לנו
-                    </Link>
-                </button>
             </section>
+            {/* <section style={{ display: "flex" }}>
+                <div>
+                    יצירתיות
+                </div>
+                <div>
+                    |
+                </div>
+                <div>
+                    התאמה אישית
+                </div>
+                <div>
+                    |
+                </div>
+                <div>
+                    תחזוקה
+                </div>
+            </section> */}
+            <Link href="/">
+                לצפיה בפרויקטים שלנו {">"}
+            </Link>
 
             <section className={`hero__imageSection`}>
                 <Image
                     src="/images/hero/hero-web.webp"
                     alt="Weby Team Logo"
-                    width={720}
-                    height={371}
-                    className='hidden lg:block'
+                    width={1280}
+                    height={720}
+                    className='hidden sm:block'
                     priority
                 />
                 <Image
@@ -47,7 +52,7 @@ const Hero = () => {
                     alt="Weby Team Logo"
                     width={360}
                     height={185}
-                    className='block lg:hidden'
+                    className='block sm:hidden'
                     priority
                 />
             </section>

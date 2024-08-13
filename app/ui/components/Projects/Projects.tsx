@@ -4,7 +4,7 @@ import ProjectsCardsSkeleton from "./ProjectsCardsSkeleton"
 
 const ProjectsSection = async () => {
     return (
-        <section className="projectsSection">
+        <section className="projectsSection" id="projects">
             <h2>פרויקטים</h2>
             <div className="elementWidth projectsSection__projects">
                 <Suspense fallback={<ProjectsCardsSkeleton />}>

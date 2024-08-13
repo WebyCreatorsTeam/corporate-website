@@ -12,6 +12,22 @@ footer {
 
 header {
     box-shadow: 0 0 5px 1px $shadowColor;
+    height: 80px;
+    min-width: 100vw;
+
+    @media screen and (min-width: 768px) {
+        // height: 100px;
+    }
+
+
+    // header {
+    //     transition: 0.2s;
+
+    //     @media screen and (min-width: 768px) {
+    //         height: 100px;
+    //     }
+    // }
+
 }
 
 footer {
