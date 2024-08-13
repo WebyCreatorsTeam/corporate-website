@@ -18,16 +18,6 @@ header {
     @media screen and (min-width: 768px) {
         // height: 100px;
     }
-
-
-    // header {
-    //     transition: 0.2s;
-
-    //     @media screen and (min-width: 768px) {
-    //         height: 100px;
-    //     }
-    // }
-
 }
 
 footer {
@@ -75,18 +65,18 @@ p {
     background-size: cover;
 }
 
-.top-elements-bkg {
-    background-image: url("./components/bkg/bck\ top.webp");
+// .top-elements-bkg {
+//     background-image: url("./components/bkg/bck\ top.webp");
 
-}
+// }
 
 .middle-elements-bkg {
     background-image: url("./components/bkg/proj-back.webp");
 }
 
-.bottom-elements-bkg {
-    background-image: url("./components/bkg/bck\ down.webp");
-}
+// .bottom-elements-bkg {
+//     background-image: url("./components/bkg/bck\ down.webp");
+// }
 
 .elementWidth {
     @include windowWidth();
@@ -94,7 +84,7 @@ p {
 
 @import "./components/navbar";
 @import "./components/hero/hero";
-@import "./components/about/about";
 @import './components/services/services';
+@import "./components/about/about";
 @import "./components/projects/projects";
 @import "./components/footer/footer";

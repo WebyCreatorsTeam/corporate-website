@@ -17,23 +17,6 @@ const Hero = () => {
                     </span>
                 </h1>
             </section>
-            {/* <section style={{ display: "flex" }}>
-                <div>
-                    יצירתיות
-                </div>
-                <div>
-                    |
-                </div>
-                <div>
-                    התאמה אישית
-                </div>
-                <div>
-                    |
-                </div>
-                <div>
-                    תחזוקה
-                </div>
-            </section> */}
             <Link href="/">
                 לצפיה בפרויקטים שלנו {">"}
             </Link>

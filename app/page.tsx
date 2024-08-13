@@ -9,12 +9,12 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <section className='top-elements-bkg'>
-        <About />
-        <Services />
-      </section>
+      {/* <section className='top-elements-bkg'> */}
+      <Services />
+      <About />
+      {/* </section> */}
       <section className='middle-elements-bkg'>
-          <ProjectsSection />
+        <ProjectsSection />
       </section>
       <section className='bottom-elements-bkg'>
 
