@@ -12,4 +12,4 @@ const ProjectsCardsSkeleton = () => {
     )
 }
 
-export default ProjectsCardsSkeleton
+export default ProjectsCardsSkeleton;
