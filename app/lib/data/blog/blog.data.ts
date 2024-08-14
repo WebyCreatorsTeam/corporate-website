@@ -2,10 +2,14 @@ import { IPost } from "@/app/types/interface";
 import connectToDatabase from "../../mongodb";
 import Post from "@/app/model/blog.model";
 
+interface IPostDoc extends IPost {
+    _doc: IPost; content: string;
+}
 export async function getBlog() {
     try {
         await connectToDatabase();
-        const blog: IPost[] = await Post.find();
+        const blogs: Array<IPostDoc> = await Post.find();
+        const blog = blogs.map((bl) => ({ ...bl._doc, content: bl.content.replace(/(<([^>]+)>)/gi, "").slice(0, 80) }))
         return blog;
     } catch (error) {
         console.log(error);

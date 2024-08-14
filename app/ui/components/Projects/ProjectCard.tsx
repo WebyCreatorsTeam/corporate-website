@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
-const ProjectCard: FC<{ urlImage: string, name: string, description: string, projectID: string }> = ({ urlImage, name, description, projectID }) => {
+const ProjectCard: FC<{ urlImage: string, name: string, description: string, projectID: string, route: string }> = ({ urlImage, name, description, projectID, route }) => {
     return (
-        <Link href={`/projects/${projectID}`} className="border bg-white shadow rounded-md p-4 max-w-[650px]">
+        <Link href={`/${route}/${projectID}`} className="border bg-white shadow rounded-md p-4 max-w-[650px]">
             <div>
                 <div className="min-h-72 xl:min-w-[600px] lg:min-w-[400px] md:min-w-[250px] overflow-hidden rounded-lg hover:opacity-75">
                     <Image src={urlImage} alt={name} width={600} height={300} className="h-full w-full object-cover object-center" />
