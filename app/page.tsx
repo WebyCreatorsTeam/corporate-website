@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       {/* <section className='top-elements-bkg'> */}
       <Services />
-      <About />
+      {/* <About /> */}
       {/* </section> */}
       <section className='middle-elements-bkg'>
         <ProjectsSection />
