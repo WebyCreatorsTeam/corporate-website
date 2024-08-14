@@ -10,7 +10,7 @@ const Page = async () => {
             <h1>בלוג</h1>
             <section>
                 {blog!.map((post, index) => (
-                    <Link href={`/blog/${post._id}`} key={index}>
+                    <Link href={`/blog/${post.title.replace(/ /g, "-")}`} key={index}>
                         <h2>{post.title}</h2>
                     </Link>
                 ))}

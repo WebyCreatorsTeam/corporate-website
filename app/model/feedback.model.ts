@@ -3,15 +3,15 @@ import mongoose, { Schema, model } from 'mongoose'
 const FeedbackSchema = new Schema({
     customerName: {
         type: String,
-        require
+        require:true
     },
     webSiteName: {
         type: String,
-        require
+        require: true
     },
     customerFeedback: {
         type: String,
-        require
+        require: true
     },
     projectId: {
         type: Schema.Types.ObjectId,

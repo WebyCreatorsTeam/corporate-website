@@ -16,7 +16,7 @@ import FeedbList from './FeedbList'
 //     _id: string
 // }
 
-const Feedbacks: FC = () => {
+const UsersFeedbacks: FC = () => {
     // const desktop = useMediaQuery({ query: '(min-width: 768px)' })
     // const { feedbacks } = useLoaderData() as { feedbacks: Array<IFeedback> }
 
@@ -63,7 +63,7 @@ const Feedbacks: FC = () => {
     )
 }
 
-export default Feedbacks
+export default UsersFeedbacks
 
 // export const hendleGetPFeedbacks = async () => {
 //     try {

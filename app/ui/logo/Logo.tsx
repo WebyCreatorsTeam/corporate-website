@@ -10,6 +10,7 @@ const Logo = () => {
                 alt="Weby Team Logo"
                 width={230}
                 height={60}
+                priority
             />
         </Link>
     )

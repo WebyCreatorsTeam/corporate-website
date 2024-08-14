@@ -12,12 +12,14 @@ export async function getBlog() {
     }
 }
 
-export async function getOnePost(postId: string) {
+export async function getOnePost(postName: string) {
     try {
         await connectToDatabase();
-        const post: IPost | null = await Post.findOne({ _id: postId });
+        const title = decodeURI(postName)
+        const post = await Post.findOne({ $text: { $search: title } }).select(['-draft'])
         return post;
     } catch (error) {
         console.log(error);
+        return {}
     }
 }

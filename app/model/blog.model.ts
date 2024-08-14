@@ -3,30 +3,30 @@ import mongoose, { Schema, model } from 'mongoose'
 const PostSchema = new Schema({
     tldr: {
         type: String,
-        require
+        require: true
     },
     title: {
         type: String,
-        require
+        require: true
     },
     content: {
         type: String,
-        require
+        require: true
     },
     draft: {
         type: Boolean,
-        require
+        require: true
     },
     coverImg: {
         type: String,
-        require
+        require: true
     },
     smallImg: {
         type: String,
-        require
+        require: true
     },
 
-}, { timestamps: true })
+}, { timestamps: true }).index({ title: 'text' })
 
 const Post = mongoose.models.Post || model("Post", PostSchema)
 export default Post
