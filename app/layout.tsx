@@ -18,7 +18,6 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
             {children}
         </main>
         <Footer />
-        {/* <script src="https://cdn.enable.co.il/licenses/enable-L28217bliq9wyu18-0724-61784/init.js"></script> */}
       </body>
     </html>
   );

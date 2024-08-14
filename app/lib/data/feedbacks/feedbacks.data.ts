@@ -8,7 +8,7 @@ export async function getFeedbacks() {
     try {
         await connectToDatabase();
         await new Promise((resolve) => setTimeout(resolve, 1000));
-        const allFeedbacks: IFeedback[] | null = await Feedback.find({});
+        const allFeedbacks: IFeedback[] | null = await Feedback.find({ "customerFeedback": { "$gt": 0 } }).select(['-projectId']);
         const feedbacks = allFeedbacks.reverse()
         return feedbacks;
     } catch (error) {
