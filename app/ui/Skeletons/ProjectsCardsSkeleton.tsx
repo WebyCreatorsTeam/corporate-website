@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectCardSkeleton from './ProjectsCardsSkeleton'
+import ProjectCardSkeleton from './ProjectCardSkeleton'
 
 const ProjectsCardsSkeleton = () => {
     return (
