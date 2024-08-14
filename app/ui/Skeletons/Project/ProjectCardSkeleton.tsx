@@ -8,7 +8,6 @@ const ProjectCardSkeleton = () => {
                         <div className="h-6 bg-slate-300 rounded"></div>
                         <div className="h-5 bg-slate-300 rounded"></div>
                     </div>
-                    <p className="text-base font-semibold text-gray-100	">Work from home accessories</p>
                 </div>
             </div>
         </div>

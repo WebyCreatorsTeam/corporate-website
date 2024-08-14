@@ -1,35 +1,28 @@
-import { getBlog } from '@/app/lib/data/blog/blog.data'
-import ProjectCard from '@/app/ui/components/Projects/ProjectCard'
-import Link from 'next/link'
-import React from 'react'
+import BlogSection from '@/app/ui/components/Blog/BlogSection'
+import BlogsCardsSkeleton from '@/app/ui/Skeletons/Blog/BlogsCardsSkeleton'
+import Image from 'next/image'
+import React, { Suspense } from 'react'
 
 const Page = async () => {
-    const blog = await getBlog()
-
     return (
-        <div className='blog'>
+        <div className='elementWidth blog'>
             <div className='blog__header'>
-                {/* <h1>בלוג</h1> */}
                 <h1>
                     הבלוג
                     <br />
                     שלנו
                 </h1>
-                <p>
+                <p className='header-text'>
                     משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג שלנו נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.
                 </p>
+                <div className='blog__header--img hidden min-[890px]:block'>
+                    <Image src="/images/blog/blog.webp" alt="איור עמוד בלוג" width={813} height={616} />
+                </div>
             </div>
             <section className='blog-section'>
-                {blog!.map((post) => (
-                    <ProjectCard
-                        urlImage={post.smallImg}
-                        name={post.title}
-                        description={`${post.content}...`}
-                        projectID={post.title.replace(/ /g, "-")}
-                        route={"blog"}
-                        key={post._id}
-                    />
-                ))}
+                <Suspense fallback={<BlogsCardsSkeleton />}>
+                    <BlogSection />
+                </Suspense>
             </section>
         </div>
     )

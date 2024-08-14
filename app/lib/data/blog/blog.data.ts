@@ -9,7 +9,7 @@ export async function getBlog() {
     try {
         await connectToDatabase();
         const blogs: Array<IPostDoc> = await Post.find();
-        const blog = blogs.map((bl) => ({ ...bl._doc, content: bl.content.replace(/(<([^>]+)>)/gi, "").slice(0, 80) }))
+        const blog = blogs.reverse().map((bl) => ({ ...bl._doc, content: bl.content.replace(/(<([^>]+)>)/gi, "").slice(0, 80) }))
         return blog;
     } catch (error) {
         console.log(error);

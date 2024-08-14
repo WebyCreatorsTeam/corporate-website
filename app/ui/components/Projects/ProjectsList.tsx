@@ -16,7 +16,7 @@ const ProjectsList = async () => {
         <>
             {projects &&
                 projects.map((project, index) => (
-                    <ProjectCard key={index} projectID={project._id} urlImage={project.urlImage} name={project.name} description={project.description} route={"projects"}/>
+                    <ProjectCard key={index} projectID={project._id} urlImage={project.urlImage} name={project.name} description={project.description} />
                 ))}
         </>
     )
