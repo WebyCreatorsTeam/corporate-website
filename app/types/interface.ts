@@ -19,3 +19,11 @@ export interface IPost {
     createdAt: string
     updatedAt: string
 }
+
+export interface IFeedback {
+    customerName: string
+    webSiteName: string
+    customerFeedback: string
+    projectId: string
+    _id: string
+}

@@ -5,12 +5,13 @@ import Projects from "@/app/model/project.model";
 export async function getProjects() {
     try {
         await connectToDatabase();
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         const allProjects: IProject[] | null = await Projects.find({ draft: false });
         const projects = allProjects.reverse().slice(0, 4)
         return projects;
     } catch (error) {
         console.log(error);
+        return []
     }
 }
 

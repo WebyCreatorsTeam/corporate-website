@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import ProjectsList from "./ProjectsList"
-import ProjectsCardsSkeleton from "./ProjectsCardsSkeleton"
+import ProjectsCardsSkeleton from "../../Skeletons/ProjectsCardsSkeleton"
+// import ProjectsCardsSkeleton from "./ProjectsCardsSkeleton"
 
 const ProjectsSection = async () => {
     return (
