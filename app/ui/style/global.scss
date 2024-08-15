@@ -5,6 +5,9 @@
 @import "./mixin/index";
 @import "./vars/index";
 
+* {
+    scroll-behavior: smooth;
+}
 header,
 footer {
     background-color: $sectionEggColor;

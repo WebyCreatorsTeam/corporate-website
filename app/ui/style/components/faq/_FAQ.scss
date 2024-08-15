@@ -14,6 +14,23 @@
         }
     }
 
+    &__info {
+
+        >p {
+            margin: 5% auto;
+
+            @media screen and (min-width: 768px) {
+                width: 80%;
+                margin: 3% auto;
+            }
+
+            @media screen and (min-width: 1000px) {
+                width: 60%;
+                margin: 2% auto;
+            }
+        }
+    }
+
     &__quest {
         @media screen and (min-width: 768px) {
             width: 80%;
