@@ -8,6 +8,7 @@
 * {
     scroll-behavior: smooth;
 }
+
 header,
 footer {
     background-color: $sectionEggColor;
@@ -16,11 +17,7 @@ footer {
 header {
     box-shadow: 0 0 5px 1px $shadowColor;
     height: 80px;
-    min-width: 100vw;
-
-    @media screen and (min-width: 768px) {
-        // height: 100px;
-    }
+    width: 100%;
 }
 
 footer {
@@ -68,18 +65,9 @@ p {
     background-size: cover;
 }
 
-// .top-elements-bkg {
-//     background-image: url("./components/bkg/bck\ top.webp");
-
-// }
-
 .middle-elements-bkg {
     background-image: url("./components/bkg/proj-back.webp");
 }
-
-// .bottom-elements-bkg {
-//     background-image: url("./components/bkg/bck\ down.webp");
-// }
 
 .elementWidth {
     @include windowWidth();
@@ -93,3 +81,4 @@ p {
 @import "./components/faq/FAQ";
 @import "./components/blog/blog";
 @import "./components/footer/footer";
+@import "./components/post/post";

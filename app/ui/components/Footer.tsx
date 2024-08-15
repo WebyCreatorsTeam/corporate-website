@@ -5,19 +5,20 @@ import { ISiteMap } from "../typescript/interfaces";
 import Link from "next/link";
 
 const siteMap: Array<ISiteMap> = [
-    { title: "מי אנחנו", url: "" },
-    { title: "פרויקטים", url: "" },
-    { title: "פידבקים", url: "" },
-    { title: "שאלות נפוצות", url: "" },
-    { title: "בלוג", url: "" },
-    { title: "יצירת קשר", url: "" },
+    { title: "פרויקטים", url: "/#projects" },
+    { title: "פידבקים", url: "/#feedbacks" },
+    { title: "אודות", url: "/about" },
+    { title: "שאלות נפוצות", url: "/faq" },
+    { title: "בלוג", url: "/blog" },
+    { title: "יצירת קשר", url: "#contact" },
 ]
 
 const products: Array<ISiteMap> = [
-    { title: "כרטיס ביקור דיגיטלי", url: "" },
     { title: "דף נחיתה", url: "" },
     { title: "אתר תדמית", url: "" },
     { title: "חנות וירטואלית", url: "" },
+    { title: "עיצוב אתר UX/UI", url: "" },
+    { title: "כרטיס ביקור דיגיטלי", url: "" },
 ]
 
 const Footer: FC = () => {
@@ -40,7 +41,7 @@ const Footer: FC = () => {
                         <ul>
                             {siteMap.map((item, index) => (
                                 <li key={index}>
-                                    {item.url && item.url?.length > 0 ? <Link href={item.url} target="_blank" rel="noreferrer">{item.title}</Link> : item.title}
+                                    {item.url && item.url?.length > 0 ? <Link href={item.url}>{item.title}</Link> : item.title}
                                 </li>
                             ))}
                         </ul>
@@ -49,35 +50,35 @@ const Footer: FC = () => {
                 <div className="footer-container__info">
                     <Logo />
                     <div className="footer-container__info--social">
-                        <a href="https://www.facebook.com/profile.php?id=61554785497612" target="_blank" rel="noreferrer">
+                        <Link href="https://www.facebook.com/profile.php?id=61554785497612" target="_blank" rel="noreferrer">
                             <Image
                                 src="/images/footer/facebook.svg"
                                 alt="פייסבוק"
                                 width={40} height={40}
                                 title="פייסבוק"
                             />
-                        </a>
-                        <a href="https://www.linkedin.com/company/101561570/admin/feed/posts" target="_blank" rel="noreferrer">
+                        </Link>
+                        <Link href="https://www.linkedin.com/company/101561570/admin/feed/posts" target="_blank" rel="noreferrer">
                             <Image
                                 src="/images/footer/linkedin.svg"
                                 alt="לינקדאין"
                                 width={40} height={40}
                                 title="לינקדאין"
                             />
-                        </a>
-                        <a href="https://www.youtube.com/@Weby-Create-team" target="_blank" rel="noreferrer">
+                        </Link>
+                        <Link href="https://www.youtube.com/@Weby-Create-team" target="_blank" rel="noreferrer">
                             <Image
                                 src="/images/footer/yt icon.svg"
                                 alt="יוטיוב"
                                 width={40} height={40}
                                 title="יוטיוב"
                             />
-                        </a>
+                        </Link>
                     </div>
                     <div className="footer-container__info--phone">
                         <div className="footer-container__info--phone--deal">
-                            <a href="tel:+972523690866" title="התקשר לראות לפרטים">ראות 052-369-0866</a>
-                            <a href="tel:+972526299431" title="התקשר לקטיה לפרטים">קטיה 052-629-9431</a>
+                            <Link href="tel:+972523690866" title="התקשר לראות לפרטים">ראות 052-369-0866</Link>
+                            <Link href="tel:+972526299431" title="התקשר לקטיה לפרטים">קטיה 052-629-9431</Link>
                         </div>
                         <Image
                             src="/images/footer/phone.svg"
@@ -87,7 +88,7 @@ const Footer: FC = () => {
                         />
                     </div>
                     <div className="footer-container__info--email">
-                        <a href="mailto:webycreatorsteam@gmail.com" className="footer-container__info--phone--deal">webycreatorsteam@gmail.com</a>
+                        <Link href="mailto:webycreatorsteam@gmail.com" className="footer-container__info--phone--deal">webycreatorsteam@gmail.com</Link>
                         <Image
                             src="/images/footer/email.svg"
                             alt="אייקון אימייל" width={40} height={32}

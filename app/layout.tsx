@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="he">
-      <body className={openSans.className} dir="rtl">
+      <body className={openSans.className} dir="rtl" suppressHydrationWarning={true}>
         <NavBar />
         <main>
             {children}
