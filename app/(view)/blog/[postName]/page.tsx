@@ -6,6 +6,8 @@ interface IPagePost {
   params: { postName: string }
 }
 
+export const dynamic = "force-dynamic"
+
 const Page: FC<IPagePost> = async ({ params }) => {
   const { postName } = params;
   const post = await getOnePost(postName)

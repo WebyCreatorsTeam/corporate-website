@@ -3,6 +3,9 @@ import BlogsCardsSkeleton from '@/app/ui/Skeletons/Blog/BlogsCardsSkeleton'
 import Image from 'next/image'
 import React, { Suspense } from 'react'
 
+export const dynamic = "force-dynamic"
+export const experimental_ppr = true;
+
 const Page = async () => {
     return (
         <div className='elementWidth blog'>
