@@ -21,7 +21,7 @@ const NavBar: FC = () => {
   return (
     <header>
       <nav className='elementWidth'>
-        <button className='block lg:hidden' onClick={() => setIsOpen(!isOpen)}>{isOpen ? <Close /> : <Menu />}</button>
+        <button aria-label='menu' title="menu" className='block lg:hidden' onClick={() => setIsOpen(!isOpen)}>{isOpen ? <Close /> : <Menu />}</button>
         <div className="navigation hidden lg:flex">
           <div className="navigation__logo">
             <Logo />
