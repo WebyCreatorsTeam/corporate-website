@@ -37,7 +37,7 @@ export const handleSendData = async (prevState: any, formData: FormData) => {
             transporter.close();
         })
 
-        return { message: "תודה על השארת הפרטים, נחזור בהקדם", success: true }
+        return { message: "תודה על השארת הפרטים", success: true }
     } catch (error: any) {
         console.log(error)
         return { message: error.errors[0].message || 'Something went wrong', success: false }

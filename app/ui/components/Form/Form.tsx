@@ -1,8 +1,10 @@
 'use client';
 
 import { handleSendData } from '@/app/lib/actions';
-import React, { useEffect, useRef } from 'react'
+import Image from 'next/image';
+import React, { FC, useEffect, useRef, useState } from 'react'
 import { useFormStatus, useFormState } from 'react-dom'
+import { validateValues } from './fornValidation';
 
 export interface OptionsList {
     value: string
@@ -25,8 +27,56 @@ const initialState: any = {
 const SubminBtn = () => {
     const { pending } = useFormStatus();
     return (
-        <button type="submit" disabled={pending}>{pending ? "פרטים נשלחים..." : "שלח"}</button>
+        <button className="form-btn" type="submit" disabled={pending}>{pending ? "פרטים נשלחים..." : "שלח"}</button>
     )
+}
+
+interface I_Input {
+    type: string,
+    name: string,
+    placeholder: string,
+    autoComp: string,
+}
+
+export interface InputsList {
+    type: string
+    name: string
+    placeholder: string
+    autoComp: string
+}
+
+export const inputs: Array<InputsList> = [
+    { type: "text", name: "userName", placeholder: "*שם מלא", autoComp: "name" },
+    { type: "email", name: "userEmail", placeholder: "*אימייל", autoComp: "email" },
+    { type: "tel", name: "userPhone", placeholder: "מספר טלפון*", autoComp: "tel" },
+];
+
+const Input: FC<I_Input> = ({ type, name, placeholder, autoComp }) => {
+    const [error, setError] = useState("")
+
+    const hendleFillInput = (ev: any) => {
+        const { continueWork, message } = validateValues(ev.target.name, ev.target.value)
+        if (!continueWork) return setError(message)
+        if (continueWork) {
+            return setError("")
+        }
+    }
+
+    return (
+        <div className='inputField'>
+            <p>{error}</p>
+            <input
+                required
+                type={type}
+                name={name}
+                placeholder={placeholder}
+                onBlur={hendleFillInput}
+                aria-label={placeholder}
+                autoComplete={autoComp}
+                style={{ borderColor: error.length > 0 ? "red" : "black" }}
+            />
+        </div>)
+
 }
 
 const Form = () => {
@@ -40,24 +90,29 @@ const Form = () => {
     }, [state])
 
     return (
-        <section id="contact">
-            <h2>מוכנים לקדם את העסק שלכם? </h2>
-            <p>השאירו פרטים ונחזור אליכם בהקדם האפשרי</p>
-            <form action={formAction} ref={ref} >
-                {state!.message && <p className='error-massege'>{state.message}</p>}
-                <input type="text" placeholder="שם מלא*" name="userName" required />
-                <input type="email" placeholder="אימייל*" name="userEmail" required />
-                <input type="tel" placeholder="מספר טלפון*" name="userPhone" required />
-                <select name="userHelp" aria-label="במה אנחנו יכולים לעזור" required >
-                    {options.map((opt, idx) => (
-                        <option key={idx} defaultValue={opt.value} disabled={opt.value === ""}>{opt.text}</option>
+        <section id="contact" className='elementWidth contact-form__element'>
+            <div className="contact-form__element--form">
+                <h2>מוכנים לקדם את העסק שלכם? </h2>
+                <p>השאירו פרטים ונחזור אליכם בהקדם האפשרי</p>
+                <form action={formAction} ref={ref} >
+                    {state!.message && <p className='error-massege' style={{ color: state.success ? "green" : "red" }}>{state.message}</p>}
+                    {inputs.map((int, idx) => (
+                        <Input key={idx} {...int} />
                     ))}
-                </select>
-                <SubminBtn />
-            </form>
+                    {/* <input type="text" placeholder="שם מלא*" name="userName" required />
+                    <input type="email" placeholder="אימייל*" name="userEmail" required />
+                    <input type="tel" placeholder="מספר טלפון*" name="userPhone" required /> */}
+                    <select name="userHelp" aria-label="במה אנחנו יכולים לעזור" required defaultValue={"dev"}>
+                        {options.map((opt, idx) => (
+                            <option key={idx} defaultValue={opt.value} disabled={opt.value === ""}>{opt.text}</option>
+                        ))}
+                    </select>
+                    <SubminBtn />
+                </form>
+            </div>
             <div className="contact-form__element--image">
-                <img className="hidden sm:block" src={"/images/callUs/call-us-desc.webp" } alt="איור של מחשב על השולחן" width={700} height={394} /><img className="sm:hidden"src={"/images/callUs/call-us-desc.webp" } alt="איור של מחשב על השולחן" width={700} height={394} />
-                <img className="block sm:hidden" src={"/images/callUs/call-us-mob.webp" } alt="איור של מחשב על השולחן" width={300} height={169} />
+                <Image className="hidden sm:block" src={"/images/callUs/call-us-desc.webp"} alt="איור של מחשב על השולחן" width={700} height={394} /><img className="sm:hidden" src={"/images/callUs/call-us-desc.webp"} alt="איור של מחשב על השולחן" width={700} height={394} />
+                <Image className="block sm:hidden" src={"/images/callUs/call-us-mob.webp"} alt="איור של מחשב על השולחן" width={300} height={169} />
             </div>
         </section>
     )

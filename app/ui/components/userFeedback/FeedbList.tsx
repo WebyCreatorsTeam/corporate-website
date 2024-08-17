@@ -1,9 +1,14 @@
 import { getFeedbacks } from '@/app/lib/data/feedbacks/feedbacks.data'
 import Image from 'next/image'
-import React from 'react'
 
 const FeedbList = async () => {
     const feedbacks = await getFeedbacks()
+
+    if (!feedbacks) {
+        return <>
+            לא נמצא
+        </>
+    }
 
     return (
         <>

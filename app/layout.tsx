@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./ui/style/global.scss";
+import "./ui/_style/global.scss";
 import { openSans } from "./ui/fonts/fonts";
 import Footer from "./ui/components/Footer";
 import NavBar from "./ui/components/NavBar/NavBar";
