@@ -3,6 +3,7 @@ import "./ui/style/global.scss";
 import { openSans } from "./ui/fonts/fonts";
 import Footer from "./ui/components/Footer";
 import NavBar from "./ui/components/NavBar/NavBar";
+import Form from "./ui/components/Form/Form";
 
 export const metadata: Metadata = {
   title: "Weby Team",
@@ -15,8 +16,9 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       <body className={openSans.className} dir="rtl" suppressHydrationWarning={true}>
         <NavBar />
         <main>
-            {children}
+          {children}
         </main>
+        <Form />
         <Footer />
         {/* <script src="https://cdn.enable.co.il/licenses/enable-L28217bliq9wyu18-0724-61784/init.js"></script> */}
       </body>

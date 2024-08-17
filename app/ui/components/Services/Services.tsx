@@ -18,8 +18,9 @@ const Services = () => {
                         </div>
                     ))}
                 </section>
-                <p className='contact-us-if-need-more'>*צריכים משהו נוסף? דברו איתנו.</p>
-                <Link href="/how-it-works">איך זה עובד?</Link>
+                <p className='contact-us-if-need-more'>*
+                    צריכים משהו נוסף? <Link href="#contact">דברו איתנו</Link>.</p>
+                {/* <Link href="/how-it-works">איך זה עובד?</Link> */}
             </section>
         </section>
     )
