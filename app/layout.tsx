@@ -4,10 +4,47 @@ import { openSans } from "./ui/fonts/fonts";
 import Footer from "./ui/components/Footer";
 import NavBar from "./ui/components/NavBar/NavBar";
 import Form from "./ui/components/Form/Form";
+import Script from "next/script";
+// import * as aaa from '@next/third-parties'
+// import { GoogleAnalytics } from '@next/third-party/google-analytics';
+
+// import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: "Weby Team",
   description: "שירותי פיתוח אתרים מתקדמים. מומחים בבניית אתרים מותאמים אישית עבור העסק, מספקים פתרונות דיגיטליים מקצה לקצה ברמה הגבוהה ביותר",
+  keywords: ['פיתוח אתר', 'עיצוב אתר', 'בניית אתרים', 'אתר לעסק', 'פתרונות דיגיטליים', 'בית תוכנה', 'UX/UI'],
+  authors: [{ name: 'Katya Ru', url: 'https://www.katya-ru.dev' }],
+  creator: 'Katya Ru',
+
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
+  openGraph: {
+    title: "Weby Team",
+    description: "שירותי פיתוח אתרים מתקדמים. מומחים בבניית אתרים מותאמים אישית עבור העסק, מספקים פתרונות דיגיטליים מקצה לקצה ברמה הגבוהה ביותר",
+    type: 'website',
+    siteName: 'Weby Team',
+    locale: 'he_IL',
+    url: "https://www.weby.team",
+    images: [{
+      url: "https://www.weby.team/logo_white_bkgr.png",
+      width: 730,
+      height: 483,
+      alt: "לוגו של וובי"
+    }],
+    emails: ['webycreatorsteam@gmail.com'],
+    phoneNumbers: ['972-51-5183320'],
+    countryName: 'Israel',
+
+  },
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
@@ -21,7 +58,17 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <Form />
         <Footer />
         {/* <script src="https://cdn.enable.co.il/licenses/enable-L28217bliq9wyu18-0724-61784/init.js"></script> */}
+        {/* <!-- Google tag (gtag.js) --> */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-GQWBPL6NKS"></Script>
+        {/* <Script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'G-GQWBPL6NKS');
+        </Script> */}
+        <Script src="https://cdn.enable.co.il/licenses/enable-L28217bliq9wyu18-0724-61784/init.js"></Script>
       </body>
+      {/* <GoogleAnalytics /> */}
     </html>
   );
 }
