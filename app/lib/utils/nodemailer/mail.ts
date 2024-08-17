@@ -1,4 +1,4 @@
-export const mailOptions = (userName, userEmail, userPhone, userHelp) => {
+export const mailOptions = (userName: string, userEmail: string, userPhone: string, userHelp: string) => {
     return {
         from: process.env.MAIL,
         to: process.env.MAIL,
