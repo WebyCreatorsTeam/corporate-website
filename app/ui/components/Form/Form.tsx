@@ -55,8 +55,12 @@ const Form = () => {
                 </select>
                 <SubminBtn />
             </form>
+            <div className="contact-form__element--image">
+                <img className="hidden sm:block" src={"/images/callUs/call-us-desc.webp" } alt="איור של מחשב על השולחן" width={700} height={394} /><img className="sm:hidden"src={"/images/callUs/call-us-desc.webp" } alt="איור של מחשב על השולחן" width={700} height={394} />
+                <img className="block sm:hidden" src={"/images/callUs/call-us-mob.webp" } alt="איור של מחשב על השולחן" width={300} height={169} />
+            </div>
         </section>
     )
 }
 
-export default Form
+export default Form;
