@@ -2,11 +2,11 @@ import { getOnePost } from '@/app/lib/data/blog/blog.data';
 import Image from 'next/image';
 import React, { FC } from 'react'
 
+export const dynamic = "force-dynamic"
+
 interface IPagePost {
   params: { postName: string }
 }
-
-export const dynamic = "force-dynamic"
 
 const Page: FC<IPagePost> = async ({ params }) => {
   const { postName } = params;

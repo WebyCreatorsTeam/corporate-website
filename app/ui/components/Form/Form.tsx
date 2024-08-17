@@ -99,9 +99,6 @@ const Form = () => {
                     {inputs.map((int, idx) => (
                         <Input key={idx} {...int} />
                     ))}
-                    {/* <input type="text" placeholder="שם מלא*" name="userName" required />
-                    <input type="email" placeholder="אימייל*" name="userEmail" required />
-                    <input type="tel" placeholder="מספר טלפון*" name="userPhone" required /> */}
                     <select name="userHelp" aria-label="במה אנחנו יכולים לעזור" required defaultValue={"dev"}>
                         {options.map((opt, idx) => (
                             <option key={idx} defaultValue={opt.value} disabled={opt.value === ""}>{opt.text}</option>
@@ -111,7 +108,7 @@ const Form = () => {
                 </form>
             </div>
             <div className="contact-form__element--image">
-                <Image className="hidden sm:block" src={"/images/callUs/call-us-desc.webp"} alt="איור של מחשב על השולחן" width={700} height={394} /><img className="sm:hidden" src={"/images/callUs/call-us-desc.webp"} alt="איור של מחשב על השולחן" width={700} height={394} />
+                <Image className="hidden sm:block" src={"/images/callUs/call-us-desc.webp"} alt="איור של מחשב על השולחן" width={700} height={394} />
                 <Image className="block sm:hidden" src={"/images/callUs/call-us-mob.webp"} alt="איור של מחשב על השולחן" width={300} height={169} />
             </div>
         </section>
