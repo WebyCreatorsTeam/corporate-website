@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React, { Suspense } from 'react'
 
 export const dynamic = "force-dynamic"
-export const experimental_ppr = true;
+// export const experimental_ppr = true;
 
 const Page = async () => {
     return (
