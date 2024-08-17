@@ -19,7 +19,7 @@ export async function getBlog() {
 export async function getOnePost(postName: string) {
     try {
         await connectToDatabase();
-        const title = decodeURI(postName)
+        const title = decodeURI(postName);
         const post = await Post.findOne({ $text: { $search: title } }).select(['-draft'])
         return post;
     } catch (error) {
