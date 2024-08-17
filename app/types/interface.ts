@@ -10,14 +10,14 @@ export interface IProject {
 
 export interface IPost {
     _id: string
-    tldr: string
+    tldr?: string
     title: string
     content: string
     draft: boolean
     coverImg: string
-    smallImg: string 
+    smallImg?: string 
     createdAt: string
-    updatedAt: string
+    updatedAt?: string
 }
 
 export interface IFeedback {

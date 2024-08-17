@@ -8,7 +8,7 @@ interface IPostDoc extends IPost {
 export async function getBlog() {
     try {
         await connectToDatabase();
-        const blogs: Array<IPostDoc> = await Post.find();
+        const blogs: Array<IPostDoc> = await Post.find({ draft: false }).select(['-draft', '-updatedAt', '-coverImg', '-tldr']);
         const blog = blogs.reverse().map((bl) => ({ ...bl._doc, content: bl.content.replace(/(<([^>]+)>)/gi, "").slice(0, 80) }))
         return blog;
     } catch (error) {
