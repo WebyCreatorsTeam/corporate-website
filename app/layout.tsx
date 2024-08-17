@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Katya Ru', url: 'https://www.katya-ru.dev' }],
   creator: 'Katya Ru',
 
-
   robots: {
     index: true,
     follow: true,
@@ -40,7 +39,6 @@ export const metadata: Metadata = {
     emails: ['webycreatorsteam@gmail.com'],
     phoneNumbers: ['972-51-5183320'],
     countryName: 'Israel',
-
   },
 };
 
