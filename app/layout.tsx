@@ -5,10 +5,7 @@ import Footer from "./ui/components/Footer";
 import NavBar from "./ui/components/NavBar/NavBar";
 import Form from "./ui/components/Form/Form";
 import Script from "next/script";
-// import * as aaa from '@next/third-parties'
-// import { GoogleAnalytics } from '@next/third-party/google-analytics';
-
-// import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: "Weby Team",
@@ -57,18 +54,10 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         </main>
         <Form />
         <Footer />
-        {/* <script src="https://cdn.enable.co.il/licenses/enable-L28217bliq9wyu18-0724-61784/init.js"></script> */}
-        {/* <!-- Google tag (gtag.js) --> */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-GQWBPL6NKS"></Script>
-        {/* <Script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', 'G-GQWBPL6NKS');
-        </Script> */}
         <Script src="https://cdn.enable.co.il/licenses/enable-L28217bliq9wyu18-0724-61784/init.js"></Script>
       </body>
-      {/* <GoogleAnalytics /> */}
+      <GoogleAnalytics gaId="G-GQWBPL6NKS"/>
     </html>
   );
 }
