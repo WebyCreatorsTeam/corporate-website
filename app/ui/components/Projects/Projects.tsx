@@ -2,6 +2,7 @@ import { Suspense } from "react"
 import ProjectsList from "./ProjectsList"
 import ProjectsCardsSkeleton from "../../Skeletons/Project/ProjectsCardsSkeleton"
 
+
 const ProjectsSection = async () => {
     return (
         <section className="projectsSection" id="projects">

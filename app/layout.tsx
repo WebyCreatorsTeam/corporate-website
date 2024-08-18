@@ -7,6 +7,8 @@ import Form from "./ui/components/Form/Form";
 import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
+export const experimental_ppr = true;
+
 export const metadata: Metadata = {
   title: "Weby Team",
   description: "שירותי פיתוח אתרים מתקדמים. מומחים בבניית אתרים מותאמים אישית עבור העסק, מספקים פתרונות דיגיטליים מקצה לקצה ברמה הגבוהה ביותר",
