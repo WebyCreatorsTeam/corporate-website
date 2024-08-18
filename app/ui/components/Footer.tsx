@@ -27,7 +27,7 @@ const Footer: FC = () => {
             <div className="elementWidth footer-container">
                 <div className="footer-container__sitemap">
                     <div className="footer-container__sitemap--items">
-                        <h4>מוצרים</h4>
+                        <div className="items-header" aria-label="מוצרים באתר">מוצרים</div>
                         <ul>
                             {products.map((item, index) => (
                                 <li key={index}>
@@ -37,7 +37,7 @@ const Footer: FC = () => {
                         </ul>
                     </div>
                     <div className="footer-container__sitemap--items">
-                        <h4>באתר</h4>
+                        <div className="items-header" aria-label="מפת אתר">באתר</div>
                         <ul>
                             {siteMap.map((item, index) => (
                                 <li key={index}>
