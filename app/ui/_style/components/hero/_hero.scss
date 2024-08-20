@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 5vh;
-    height: calc(95vh - 80px);
+    min-height: calc(95vh - 80px);
     align-items: center;
     text-align: center;
     justify-content: space-between;
@@ -21,12 +21,13 @@
     }
 
     &__imageSection {
-        width: clamp(22.5rem, 59.259vw + 9.167rem, 62.5rem);
-        height:clamp(11.563rem, 31.111vw + 4.563rem, 32.563rem);
+        max-width: 1000px;
+        // width: clamp(22.5rem, 59.259vw + 9.167rem, 62.5rem);
+        // height:clamp(11.563rem, 31.111vw + 4.563rem, 32.563rem);
 
         img {
-            width: 100%;
-            height: 100%;
+            // width: 100%;
+            // height: 100%;
         }
     }
 }
