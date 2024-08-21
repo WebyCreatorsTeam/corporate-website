@@ -17,7 +17,7 @@ const Hero = () => {
                     </span>
                 </h1>
             </section>
-            <Link href="/">
+            <Link href="/#projects">
                 לצפיה בפרויקטים שלנו {">"}
             </Link>
 
