@@ -1,5 +1,6 @@
-import { getOnePost } from '@/app/lib/data/blog/blog.data';
+import { getOnePost, getTitlePost } from '@/app/lib/data/blog/blog.data';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import React, { FC } from 'react'
 
 export const dynamic = "force-dynamic"
@@ -10,9 +11,18 @@ interface IPagePost {
 
 const Page: FC<IPagePost> = async ({ params }) => {
   const { postName } = params;
-  const post = await getOnePost(postName)
 
-  if (!post || Object.keys(post).length === 0) return <>null</>
+  let post
+
+  if (!postName.includes('-') && postName.length == 24) {
+    const title: string = await getTitlePost(postName)
+    const titlepath = title.replaceAll(' ', '-')
+    post = await getOnePost(titlepath)
+  } else {
+    post = await getOnePost(postName)
+  }
+
+  if (!post || Object.keys(post).length === 0) return notFound()
 
   return (
     <article className='elementWidth post'>
