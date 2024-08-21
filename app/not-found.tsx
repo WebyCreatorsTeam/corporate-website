@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function NotFound() {
   const pathname = usePathname()
 
-  if (pathname.includes("/blog/post/") ) {
+  if (pathname.includes("/blog/post/") && pathname.replace('/blog/post/', '').length == 24 ) {
     const pathText = pathname.replace('/blog/post/', '')
     return redirect('/blog/' + pathText)
   }
