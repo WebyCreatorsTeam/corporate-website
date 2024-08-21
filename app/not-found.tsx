@@ -6,7 +6,11 @@ import Link from 'next/link';
 export default function NotFound() {
   const pathname = usePathname()
 
+<<<<<<< HEAD
   if (pathname.includes("/blog/post/") ) {
+=======
+  if (pathname.includes("/blog/post/") && pathname.replace('/blog/post/', '').length == 24 ) {
+>>>>>>> parent of eab30e0 (Revert "404 page")
     const pathText = pathname.replace('/blog/post/', '')
     return redirect('/blog/' + pathText)
   }
