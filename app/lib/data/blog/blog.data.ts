@@ -1,5 +1,3 @@
-"use server"
-
 import { IPost } from "@/app/types/interface";
 import connectToDatabase from "../../mongodb";
 import Post from "@/app/model/blog.model";
@@ -20,7 +18,6 @@ export async function getBlog() {
 
 export async function getOnePost(postName: string) {
     try {
-        // console.log(first)
         await connectToDatabase();
         const title = decodeURI(postName);
         const regex = new RegExp(title.replaceAll("-", " ").replaceAll('%3A', ':'), 'i')
@@ -28,19 +25,6 @@ export async function getOnePost(postName: string) {
         return post;
     } catch (error) {
         console.log(error);
-        return error
-        // return {}
-    }
-}
-
-export async function getTitlePost(postId: string) {
-    try {
-        await connectToDatabase();
-        const post = await Post.findById(postId).select(['title'])
-        console.log(post)
-        return post.title;
-    } catch (error) {
-        console.log(error);
-        return ""
+        return {}
     }
 }

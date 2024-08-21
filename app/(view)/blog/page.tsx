@@ -3,7 +3,6 @@ import BlogsCardsSkeleton from '@/app/ui/Skeletons/Blog/BlogsCardsSkeleton'
 import Image from 'next/image'
 import React, { Suspense } from 'react'
 
-
 export const dynamic = "force-dynamic"
 
 const Page = async () => {
