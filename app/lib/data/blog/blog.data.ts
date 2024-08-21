@@ -20,7 +20,8 @@ export async function getOnePost(postName: string) {
     try {
         await connectToDatabase();
         const title = decodeURI(postName);
-        const regex = new RegExp(title.replaceAll("-", " ").replaceAll('%3A', ':'), 'i')
+        console.log(title)
+        const regex = new RegExp(title.replaceAll("-", " ").replaceAll('%3A', ':').replaceAll('%2C', ","), 'i')
         const post = await Post.findOne({ title: { $regex: regex } }).select(['-draft'])
         return post;
     } catch (error) {
