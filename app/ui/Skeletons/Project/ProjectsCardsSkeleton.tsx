@@ -8,6 +8,8 @@ const ProjectsCardsSkeleton = () => {
             <ProjectCardSkeleton />
             <ProjectCardSkeleton />
             <ProjectCardSkeleton />
+            <ProjectCardSkeleton />
+            <ProjectCardSkeleton />
         </>
     )
 }
