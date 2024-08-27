@@ -6,7 +6,7 @@ const BlogCard = ({post}:any) => {
     return (
         <article key={post._id} className="max-w-sm bg-white border border-gray-300 rounded-lg shadow">
             <Link href={`/blog/${post.title.replaceAll(' ', '-')}`}>
-                <Image className="rounded-t-lg" src={post.smallImg} alt="" width={445} height={250} />
+                <Image className="rounded-t-lg" src={post.smallImg} alt="" width={500} height={281} />
             </Link>
             <div className="p-5">
                 <p className="mb-3 text-sm font-normal text-gray-700">{new Date(post.createdAt).toLocaleDateString("en-GB", { year: "numeric", month: "numeric", day: "numeric" })}</p>
