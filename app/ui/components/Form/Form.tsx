@@ -3,7 +3,7 @@
 import { handleSendData } from '@/app/lib/actions';
 import Image from 'next/image';
 import React, { FC, useEffect, useRef, useState } from 'react'
-import { useFormStatus, useFormState } from 'react-dom'
+import { useFormStatus } from 'react-dom'
 import { useActionState } from 'react';
 import { validateValues } from './fornValidation';
 
@@ -81,7 +81,6 @@ const Input: FC<I_Input> = ({ type, name, placeholder, autoComp }) => {
 }
 
 const Form = () => {
-    // const [state, formAction] = useFormState(handleSendData, initialState)
     const [state, formAction] = useActionState(handleSendData, initialState);
 
     const ref = useRef<HTMLFormElement>(null)

@@ -10,7 +10,10 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 export const experimental_ppr = true;
 
 export const metadata: Metadata = {
-  title: "Weby Team",
+  title: {
+    template: "%s | Weby Team",
+    default: "Weby Team",
+  },
   description: "שירותי פיתוח אתרים מתקדמים. מומחים בבניית אתרים מותאמים אישית עבור העסק, מספקים פתרונות דיגיטליים מקצה לקצה ברמה הגבוהה ביותר",
   keywords: ['פיתוח אתר', 'עיצוב אתר', 'בניית אתרים', 'אתר לעסק', 'פתרונות דיגיטליים', 'בית תוכנה', 'UX/UI'],
   authors: [{ name: 'Katya Ru', url: 'https://www.katya-ru.dev' }],
@@ -57,7 +60,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-GQWBPL6NKS"></Script>
         <Script src="https://cdn.enable.co.il/licenses/enable-L28217bliq9wyu18-0724-61784/init.js"></Script>
       </body>
-      <GoogleAnalytics gaId="G-GQWBPL6NKS"/>
+      <GoogleAnalytics gaId="G-GQWBPL6NKS" />
     </html>
   );
 }

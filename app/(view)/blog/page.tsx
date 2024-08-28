@@ -1,10 +1,15 @@
 import BlogSection from '@/app/ui/components/Blog/BlogSection'
 import BlogsCardsSkeleton from '@/app/ui/Skeletons/Blog/BlogsCardsSkeleton'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import React, { Suspense } from 'react'
 
-
 export const dynamic = "force-dynamic"
+
+export const metadata: Metadata = {
+    title: "בלוג",
+    description:"משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג של Weby נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם."
+}
 
 const Page = async () => {
     return (
