@@ -45,7 +45,7 @@ export async function generateMetadata(
     openGraph: {
       title: post.title,
       description: post.tldr,
-      url: "https://www.weby.team/about",
+      url: `https://www.weby.team/blog/${post.title.replaceAll(" ", "-")}`,
       siteName: 'Weby Team',
       images: [{
         url: post.coverImg,
