@@ -1,7 +1,28 @@
 import React from 'react'
 import { FAQquestion } from './FAQData';
 import QItem from '@/app/ui/components/QItem/QItem';
+import { Metadata } from 'next';
 
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+      title: "שאלות נפוצות",
+      description: "יש לכם שאלות? אנחנו כאן בשביל לענות עליהם!",
+      metadataBase: new URL("https://www.weby.team"),
+
+      openGraph: {
+          title: "בלוג",
+          description: "יש לכם שאלות? אנחנו כאן בשביל לענות עליהם!",
+          url: "https://www.weby.team/faq",
+          siteName: 'Weby Team',
+          images: [{
+              url: "https://www.weby.team/logo_white_bkgr.png",
+              width: 730,
+              height: 483,
+              alt: "לוגו של וובי"
+          }],
+      }
+  }
+}
 const Page = () => {
   return (
     <section className='elementWidth faq' id="faq">
