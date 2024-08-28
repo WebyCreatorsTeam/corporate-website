@@ -1,4 +1,26 @@
+import { Metadata } from 'next'
 import React from 'react'
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+      title: "אודות",
+      // description: "יש לכם שאלות? אנחנו כאן בשביל לענות עליהם!",
+      metadataBase: new URL("https://www.weby.team"),
+
+      openGraph: {
+          title: "אודות",
+          // description: "יש לכם שאלות? אנחנו כאן בשביל לענות עליהם!",
+          url: "https://www.weby.team/faq",
+          siteName: 'Weby Team',
+          images: [{
+              url: "https://www.weby.team/logo_white_bkgr.png",
+              width: 730,
+              height: 483,
+              alt: "לוגו של וובי"
+          }],
+      }
+  }
+}
 
 const WordBold = ({ word = "Weby" }: { word?: string }) => {
   return <span style={{ fontWeight: "bold" }}>{word}</span>
