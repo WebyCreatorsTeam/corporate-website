@@ -14,6 +14,7 @@
     "mongoose": "^8.5.1",
     "next": "15.0.0-rc.0",
     "nodemailer": "^6.9.14",
+    "pnpm": "^9.9.0",
     "react": "19.0.0-rc-1eaccd82-20240816",
     "react-dom": "19.0.0-rc-1eaccd82-20240816",
     "react-responsive": "^10.0.0",
