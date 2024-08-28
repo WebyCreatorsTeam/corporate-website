@@ -6,7 +6,7 @@ import React, { Suspense } from 'react'
 
 export const dynamic = "force-dynamic"
 
-export const generateMetadata = (parent: ResolvingMetadata): Metadata => {
+export async function generateMetadata(): Promise<Metadata> {
     return {
         title: "בלוג",
         description: "משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.",
