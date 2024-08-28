@@ -4,10 +4,9 @@ import { FC } from 'react'
 
 const ProjectCard: FC<{ urlImage: string, name: string, description: string, projectID: string, url: string }> = ({ urlImage, name, description, projectID, url }) => {
     return (
-        <Link href={url} className="border bg-white shadow rounded-md p-4 max-w-[650px]" target='_blank'>
-            {/* <div className="border bg-white shadow rounded-md p-4 max-w-[650px]"> */}
+        <Link href={url} className="project_card border bg-white shadow rounded-md p-4" target='_blank'>
                 <div>
-                    <div className="min-h-72 xl:min-w-[600px] lg:min-w-[400px] md:min-w-[250px] overflow-hidden rounded-lg hover:opacity-75"> {/*//hover:opacity-75*/}
+                    <div className="min-h-72  overflow-hidden rounded-lg hover:opacity-75"> {/*//hover:opacity-75*/}
                         <Image src={urlImage} alt={name} width={600} height={300} className="h-full w-full object-cover object-center" />
                         <div className="mt-6 text-sm text-gray-100 flex flex-col justify-between min-h-16">
                             <h3 className="text-black">{name}</h3>
@@ -15,7 +14,6 @@ const ProjectCard: FC<{ urlImage: string, name: string, description: string, pro
                         </div>
                     </div>
                 </div>
-            {/* </div> */}
         </Link>
     )
 }
