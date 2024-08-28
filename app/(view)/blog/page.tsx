@@ -10,10 +10,19 @@ export const generateMetadata = (): Metadata => {
     return {
         title: "בלוג",
         description: "משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.",
-
+        metadataBase: new URL("https://www.weby.team"),
+        
         openGraph: {
             title: "בלוג",
-            description: "משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.",    
+            description: "משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.",
+            url: "https://www.weby.team/blog",
+            siteName: 'Weby Team',
+            images: [{
+                url: "https://www.weby.team/logo_white_bkgr.png",
+                width: 730,
+                height: 483,
+                alt: "לוגו של וובי"
+            }],
         }
     }
 }
