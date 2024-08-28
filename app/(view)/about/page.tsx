@@ -4,12 +4,10 @@ import React from 'react'
 export async function generateMetadata(): Promise<Metadata> {
   return {
       title: "אודות",
-      // description: "יש לכם שאלות? אנחנו כאן בשביל לענות עליהם!",
       metadataBase: new URL("https://www.weby.team"),
 
       openGraph: {
           title: "אודות",
-          // description: "יש לכם שאלות? אנחנו כאן בשביל לענות עליהם!",
           url: "https://www.weby.team/about",
           siteName: 'Weby Team',
           images: [{

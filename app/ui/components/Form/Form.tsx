@@ -77,7 +77,6 @@ const Input: FC<I_Input> = ({ type, name, placeholder, autoComp }) => {
                 style={{ borderColor: error.length > 0 ? "red" : "black" }}
             />
         </div>)
-
 }
 
 const Form = () => {

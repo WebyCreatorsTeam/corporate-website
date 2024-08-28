@@ -1,9 +1,61 @@
 import { getOnePost, getTitlePost } from '@/app/lib/data/blog/blog.data';
+import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React, { FC } from 'react'
 
 export const dynamic = "force-dynamic"
+
+export type TGenerateMetadataProps = {
+  params: { postName: string };
+};
+
+export async function generateMetadata(
+  { params }: { params: { postName: string } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { postName } = params;
+  // console.log(params)
+
+  // const title = decodeURI(postName);
+  // const regex = title.replaceAll("-", " ").replaceAll('%3A', ':').replaceAll('%2C', ",")
+  // console.log(regex)
+
+  const previousImages = (await parent).openGraph?.images || []
+
+
+  let post
+
+  if (!postName.includes('-') && postName.length == 24) {
+    const title: string = await getTitlePost(postName)
+    const titlepath = title.replaceAll(' ', '-')
+    post = await getOnePost(titlepath);
+  } else {
+    post = await getOnePost(postName);
+  }
+
+  // console.log(post)
+  return {
+    title: {
+      absolute: post.title
+    },
+    metadataBase: new URL("https://www.weby.team"),
+
+    openGraph: {
+      title: post.title,
+      url: "https://www.weby.team/about",
+      siteName: 'Weby Team',
+      images: [post.coverImg, ...previousImages],
+
+      // images: [{
+      //   url: "https://www.weby.team/logo_white_bkgr.png",
+      //   width: 730,
+      //   height: 483,
+      //   alt: "לוגו של וובי"
+      // }],
+    }
+  }
+}
 
 interface IPagePost {
   params: { postName: string }
