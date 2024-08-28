@@ -29,7 +29,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Weby Team",
+    title: {
+      template: "%s | Weby Team",
+      default: "Weby Team",
+    },
     description: "שירותי פיתוח אתרים מתקדמים. מומחים בבניית אתרים מותאמים אישית עבור העסק, מספקים פתרונות דיגיטליים מקצה לקצה ברמה הגבוהה ביותר",
     type: 'website',
     siteName: 'Weby Team',
