@@ -60,7 +60,7 @@ const NavBar: FC = () => {
         </div>
         {/* descktop */}
         <div className='hidden lg:block navigation__contact'>
-          <Link href="tel:+972515183320">
+          <Link href="tel:+972515183320" >
             051-518-3320
           </Link>
         </div>

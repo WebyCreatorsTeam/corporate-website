@@ -15,15 +15,6 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { postName } = params;
-  // console.log(params)
-
-  // const title = decodeURI(postName);
-  // const regex = title.replaceAll("-", " ").replaceAll('%3A', ':').replaceAll('%2C', ",")
-  // console.log(regex)
-
-  const previousImages = (await parent).openGraph?.images || []
-
-
   let post
 
   if (!postName.includes('-') && postName.length == 24) {
@@ -34,7 +25,6 @@ export async function generateMetadata(
     post = await getOnePost(postName);
   }
 
-  // console.log(post)
   return {
     title: {
       absolute: post.title
@@ -53,13 +43,6 @@ export async function generateMetadata(
         height: 483,
         alt: `איור של כתבה ${post.title}`
       }],
-
-      // images: [{
-      //   url: "https://www.weby.team/logo_white_bkgr.png",
-      //   width: 730,
-      //   height: 483,
-      //   alt: "לוגו של וובי"
-      // }],
     }
   }
 }

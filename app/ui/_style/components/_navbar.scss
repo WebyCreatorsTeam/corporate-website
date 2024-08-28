@@ -52,6 +52,7 @@ nav {
 
             a {
                 @include urlBtn;
+                z-index: 10000;
             }
         }
     }
