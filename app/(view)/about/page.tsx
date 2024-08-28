@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
       openGraph: {
           title: "אודות",
           // description: "יש לכם שאלות? אנחנו כאן בשביל לענות עליהם!",
-          url: "https://www.weby.team/faq",
+          url: "https://www.weby.team/about",
           siteName: 'Weby Team',
           images: [{
               url: "https://www.weby.team/logo_white_bkgr.png",
