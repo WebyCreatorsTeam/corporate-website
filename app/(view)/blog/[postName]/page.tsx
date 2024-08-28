@@ -39,10 +39,12 @@ export async function generateMetadata(
     title: {
       absolute: post.title
     },
+    description: post.tldr,
     metadataBase: new URL("https://www.weby.team"),
 
     openGraph: {
       title: post.title,
+      description: post.tldr,
       url: "https://www.weby.team/about",
       siteName: 'Weby Team',
       images: [{
