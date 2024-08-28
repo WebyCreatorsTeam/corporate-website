@@ -45,7 +45,12 @@ export async function generateMetadata(
       title: post.title,
       url: "https://www.weby.team/about",
       siteName: 'Weby Team',
-      images: [post.coverImg, ...previousImages],
+      images: [{
+        url: post.coverImg,
+        width: 730,
+        height: 483,
+        alt: `איור של כתבה ${post.title}`
+      }],
 
       // images: [{
       //   url: "https://www.weby.team/logo_white_bkgr.png",
