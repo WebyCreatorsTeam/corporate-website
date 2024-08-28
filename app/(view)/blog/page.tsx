@@ -6,28 +6,43 @@ import React, { Suspense } from 'react'
 
 export const dynamic = "force-dynamic"
 
-export const metadata: Metadata = {
-    title: "בלוג",
-    description: "משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג של Weby נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.",
-    metadataBase: new URL("https://www.weby.team"),
-
-    openGraph: {
+export const generateMetadata = (): Metadata => {
+    return {
         title: "בלוג",
-        description: "משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג של Weby נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.",
-        url: "https://www.weby.team/blog",
-        type: 'website',
-        siteName: 'Weby Team',
-        images: [{
-            url: "https://www.weby.team/logo_white_bkgr.png",
-            width: 730,
-            height: 483,
-            alt: "לוגו של וובי"
-        }],
-        emails: ['webycreatorsteam@gmail.com'],
-        phoneNumbers: ['972-51-5183320'],
-        countryName: 'Israel',
-    },
+        description: "משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.",
+
+        openGraph: {
+            title: "בלוג",
+            description: "משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.",    
+        }
+    }
 }
+
+
+
+
+// export const metadata: Metadata = {
+//     title: "בלוג",
+//     description: "משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג של Weby נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.",
+//     metadataBase: new URL("https://www.weby.team"),
+
+//     openGraph: {
+//         title: "בלוג",
+//         description: "משתפים אתכם בתובנות והמידע שאספנו לאורך הזמן, בבלוג של Weby נחקור את הכלים השונים ונעזור לכם להבין כיצד ליישם את הידע בפרויקטים שלכם.",
+//         url: "https://www.weby.team/blog",
+//         type: 'website',
+//         siteName: 'Weby Team',
+//         images: [{
+//             url: "https://www.weby.team/logo_white_bkgr.png",
+//             width: 730,
+//             height: 483,
+//             alt: "לוגו של וובי"
+//         }],
+//         emails: ['webycreatorsteam@gmail.com'],
+//         phoneNumbers: ['972-51-5183320'],
+//         countryName: 'Israel',
+//     },
+// }
 
 const Page = async () => {
     return (
