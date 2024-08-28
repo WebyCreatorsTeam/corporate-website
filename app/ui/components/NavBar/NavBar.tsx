@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState,useRef  } from 'react'
 import { navigationLinks } from './navigationLinks'
 import Logo from '../../logo/Logo';
 import { useMediaQuery } from 'react-responsive'
@@ -11,12 +11,28 @@ import Menu from './Menu';
 const NavBar: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const desktop = useMediaQuery({ query: '(min-width: 1024px)' })
+  const ref: any = useRef(null);
 
   useEffect(() => {
     if (desktop) {
       setIsOpen(false)
     }
   }, [desktop])
+
+  useEffect(() => {
+    const handleOutSideClick = (event: any) => {
+      if (!ref.current?.contains(event.target)) {
+        setIsOpen(false)
+      }
+    };
+
+    window.addEventListener("mousedown", handleOutSideClick);
+
+    return () => {
+      window.removeEventListener("mousedown", handleOutSideClick);
+    };
+  }, [ref]);
+
 
   return (
     <header>
@@ -26,7 +42,7 @@ const NavBar: FC = () => {
           <div className="navigation__logo">
             <Logo />
           </div>
-          <div className={`navigation__links ${isOpen ? 'flex' : 'hidden'} lg:flex`}>
+          <div className={`navigation__links ${isOpen ? 'flex' : 'hidden'} lg:flex`} ref={ref}>
             {navigationLinks.map((nav, ind) => (
               <Link
                 key={ind}
