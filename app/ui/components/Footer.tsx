@@ -77,8 +77,7 @@ const Footer: FC = () => {
                     </div>
                     <div className="footer-container__info--phone">
                         <div className="footer-container__info--phone--deal">
-                            <Link href="tel:+972523690866" title="התקשר לראות לפרטים">ראות 052-369-0866</Link>
-                            <Link href="tel:+972526299431" title="התקשר לקטיה לפרטים">קטיה 052-629-9431</Link>
+                            <Link href="tel:+972515183320" title="התקשר לקטיה לפרטים">קטיה 051-518-3320</Link>
                         </div>
                         <Image
                             src="/images/footer/phone.svg"

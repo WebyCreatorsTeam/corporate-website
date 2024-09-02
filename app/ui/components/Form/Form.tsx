@@ -53,7 +53,7 @@ export const inputs: Array<InputsList> = [
 ];
 
 const Input: FC<I_Input> = ({ type, name, placeholder, autoComp }) => {
-    const [error, setError] = useState("")
+    const [error, setError] = useState<string>("")
 
     const hendleFillInput = (ev: any) => {
         const { continueWork, message } = validateValues(ev.target.name, ev.target.value)
