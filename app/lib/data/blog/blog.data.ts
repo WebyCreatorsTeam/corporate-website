@@ -23,10 +23,10 @@ export async function getOnePost(postName: string) {
         // console.log(first)
         await connectToDatabase();
         console.log(`line 25 postName ${postName}`)
-        const urltitle = decodeURI(postName);
-        console.log(`line 27 title ${urltitle}`)
-        const regex = new RegExp(urltitle.replaceAll("-", " ").replaceAll('%3A', ':').replaceAll('%2C', ","), 'i')
-        const post = await Post.findOne({ title: { $regex: regex } }).select(['-draft'])
+        // const urltitle = decodeURIComponent(postName);
+        // console.log(`line 27 title ${urltitle}`)
+        // const regex = new RegExp(urltitle.replaceAll("-", " "), 'i')
+        const post = await Post.findOne({ title: postName }).select(['-draft'])
         return post;
     } catch (error) {
         console.log(`error getOnePost`)

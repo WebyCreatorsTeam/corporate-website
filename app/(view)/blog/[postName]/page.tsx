@@ -10,42 +10,42 @@ export type TGenerateMetadataProps = {
   params: { postName: string };
 };
 
-export async function generateMetadata(
-  { params }: { params: { postName: string } },
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const { postName } = params;
-  // let post
+// export async function generateMetadata(
+//   { params }: { params: { postName: string } },
+//   parent: ResolvingMetadata
+// ): Promise<Metadata> {
+//   const { postName } = params;
+//   // let post
 
-  // if (!postName.includes('-') && postName.length == 24) {
-  //   const title: string = await getTitlePost(postName)
-  //   const titlepath = title.replaceAll(' ', '-')
-  //   post = await getOnePost(titlepath);
-  // } else {
-  const post = await getOnePost(postName);
-  // }
+//   // if (!postName.includes('-') && postName.length == 24) {
+//   //   const title: string = await getTitlePost(postName)
+//   //   const titlepath = title.replaceAll(' ', '-')
+//   //   post = await getOnePost(titlepath);
+//   // } else {
+//   // const post = await getOnePost(postName);
+//   // }
 
-  return {
-    title: {
-      absolute: post.title
-    },
-    description: post.tldr,
-    metadataBase: new URL("https://www.weby.team"),
+//   // return {
+//   //   title: {
+//   //     absolute: post.title
+//   //   },
+//   //   description: post.tldr,
+//   //   metadataBase: new URL("https://www.weby.team"),
 
-    openGraph: {
-      title: post.title,
-      description: post.tldr,
-      url: `https://www.weby.team/blog/${post.title.replaceAll(" ", "-")}`,
-      siteName: 'Weby Team',
-      images: [{
-        url: post.coverImg,
-        width: 730,
-        height: 483,
-        alt: `איור של כתבה ${post.title}`
-      }],
-    }
-  }
-}
+//   //   openGraph: {
+//   //     title: post.title,
+//   //     description: post.tldr,
+//   //     url: `https://www.weby.team/blog/${post.title.replaceAll(" ", "-")}`,
+//   //     siteName: 'Weby Team',
+//   //     images: [{
+//   //       url: post.coverImg,
+//   //       width: 730,
+//   //       height: 483,
+//   //       alt: `איור של כתבה ${post.title}`
+//   //     }],
+//   //   }
+//   // }
+// }
 
 interface IPagePost {
   params: { postName: string }
@@ -53,8 +53,9 @@ interface IPagePost {
 
 const Page: FC<IPagePost> = async ({ params }) => {
   const { postName } = params;
-console.log(postName)
-  const post = await getOnePost(postName)
+  console.log(postName)
+  const uri = decodeURIComponent(postName).replaceAll("-", " ");
+  const post = await getOnePost(uri)
 
   // let post
 
