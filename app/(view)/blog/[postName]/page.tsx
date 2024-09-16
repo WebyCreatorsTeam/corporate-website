@@ -10,42 +10,47 @@ export type TGenerateMetadataProps = {
   params: { postName: string };
 };
 
-// export async function generateMetadata(
-//   { params }: { params: { postName: string } },
-//   parent: ResolvingMetadata
-// ): Promise<Metadata> {
-//   const { postName } = params;
-//   // let post
+export async function generateMetadata(
+  { params }: { params: { postName: string } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { postName } = params;
+  console.log(postName)
+  const uri = decodeURIComponent(decodeURIComponent(postName)).replaceAll("-", " ")
 
-//   // if (!postName.includes('-') && postName.length == 24) {
-//   //   const title: string = await getTitlePost(postName)
-//   //   const titlepath = title.replaceAll(' ', '-')
-//   //   post = await getOnePost(titlepath);
-//   // } else {
-//   // const post = await getOnePost(postName);
-//   // }
+  const post = await getOnePost(uri)
+  // const { postName } = params;
+  // let post
 
-//   // return {
-//   //   title: {
-//   //     absolute: post.title
-//   //   },
-//   //   description: post.tldr,
-//   //   metadataBase: new URL("https://www.weby.team"),
+  // if (!postName.includes('-') && postName.length == 24) {
+  //   const title: string = await getTitlePost(postName)
+  //   const titlepath = title.replaceAll(' ', '-')
+  //   post = await getOnePost(titlepath);
+  // } else {
+  // const post = await getOnePost(postName);
+  // }
 
-//   //   openGraph: {
-//   //     title: post.title,
-//   //     description: post.tldr,
-//   //     url: `https://www.weby.team/blog/${post.title.replaceAll(" ", "-")}`,
-//   //     siteName: 'Weby Team',
-//   //     images: [{
-//   //       url: post.coverImg,
-//   //       width: 730,
-//   //       height: 483,
-//   //       alt: `איור של כתבה ${post.title}`
-//   //     }],
-//   //   }
-//   // }
-// }
+  return {
+    title: {
+      absolute: post.title
+    },
+    description: post.tldr,
+    metadataBase: new URL("https://www.weby.team"),
+
+    openGraph: {
+      title: post.title,
+      description: post.tldr,
+      url: `https://www.weby.team/blog/${post.title.replaceAll(" ", "-")}`,
+      siteName: 'Weby Team',
+      images: [{
+        url: post.coverImg,
+        width: 730,
+        height: 483,
+        alt: `איור של כתבה ${post.title}`
+      }],
+    }
+  }
+}
 
 interface IPagePost {
   params: { postName: string }
@@ -56,8 +61,8 @@ const Page: FC<IPagePost> = async ({ params }) => {
   console.log(postName)
   const uri = decodeURIComponent(decodeURIComponent(postName)).replaceAll("-", " ")
 
-  // const uri = await decodeURIComponent(postName).replaceAll("-", " ");
   const post = await getOnePost(uri)
+  // const uri = await decodeURIComponent(postName).replaceAll("-", " ");
 
   // let post
 
