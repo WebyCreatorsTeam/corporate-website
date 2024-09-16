@@ -1,4 +1,4 @@
-import { getOnePost, getTitlePost } from '@/app/lib/data/blog/blog.data';
+import { getOnePost } from '@/app/lib/data/blog/blog.data';
 import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -15,15 +15,15 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { postName } = params;
-  let post
+  // let post
 
-  if (!postName.includes('-') && postName.length == 24) {
-    const title: string = await getTitlePost(postName)
-    const titlepath = title.replaceAll(' ', '-')
-    post = await getOnePost(titlepath);
-  } else {
-    post = await getOnePost(postName);
-  }
+  // if (!postName.includes('-') && postName.length == 24) {
+  //   const title: string = await getTitlePost(postName)
+  //   const titlepath = title.replaceAll(' ', '-')
+  //   post = await getOnePost(titlepath);
+  // } else {
+  const post = await getOnePost(postName);
+  // }
 
   return {
     title: {
@@ -53,16 +53,29 @@ interface IPagePost {
 
 const Page: FC<IPagePost> = async ({ params }) => {
   const { postName } = params;
-console.log(`postName line 56 page.tsx ${postName}`)
-  let post
 
-  if (!postName.includes('-') && postName.length == 24) {
-    const title: string = await getTitlePost(postName)
-    const titlepath = title.replaceAll(' ', '-')
-    post = await getOnePost(titlepath)
-  } else {
-    post = await getOnePost(postName)
-  }
+  const post = await getOnePost(postName)
+
+  // let post
+
+  // if(!postName.includes('-') && postName.length == 24){
+  //   const title: string = await getTitlePost(postName)
+  //   post = await getOnePost(titlepath)
+  //   return post
+  // }
+
+  // const title = decodeURI(postName);
+
+  // console.log(`postName line 56 page.tsx ${postName}`)
+  //   let post
+
+  //   if (!postName.includes('-') && postName.length == 24) {
+  //     const title: string = await getTitlePost(postName)
+  //     const titlepath = title.replaceAll(' ', '-')
+  //     post = await getOnePost(titlepath)
+  //   } else {
+  //     post = await getOnePost(postName)
+  //   }
 
   if (!post || Object.keys(post).length === 0) return notFound()
 
