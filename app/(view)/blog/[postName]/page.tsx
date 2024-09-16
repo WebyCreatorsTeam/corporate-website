@@ -53,7 +53,7 @@ interface IPagePost {
 
 const Page: FC<IPagePost> = async ({ params }) => {
   const { postName } = params;
-
+console.log(`postName line 56 page.tsx ${postName}`)
   let post
 
   if (!postName.includes('-') && postName.length == 24) {
