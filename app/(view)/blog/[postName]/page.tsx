@@ -53,7 +53,7 @@ interface IPagePost {
 
 const Page: FC<IPagePost> = async ({ params }) => {
   const { postName } = params;
-
+console.log(postName)
   const post = await getOnePost(postName)
 
   // let post

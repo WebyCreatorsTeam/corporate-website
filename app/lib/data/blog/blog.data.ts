@@ -36,15 +36,15 @@ export async function getOnePost(postName: string) {
     }
 }
 
-export async function getTitlePost(postId: string) {
-    try {
-        await connectToDatabase();
-        const post = await Post.findById(postId).select(['title'])
-        console.log(`line 42 post ${post}`)
-        return post.title;
-    } catch (error) {
-        console.log(`error getOnePost`)
-        console.log(error);
-        return ""
-    }
-}
+// export async function getTitlePost(postId: string) {
+//     try {
+//         await connectToDatabase();
+//         const post = await Post.findById(postId).select(['title'])
+//         console.log(`line 42 post ${post}`)
+//         return post.title;
+//     } catch (error) {
+//         console.log(`error getOnePost`)
+//         console.log(error);
+//         return ""
+//     }
+// }
