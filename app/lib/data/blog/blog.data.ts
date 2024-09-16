@@ -29,6 +29,7 @@ export async function getOnePost(postName: string) {
         const post = await Post.findOne({ title: { $regex: regex } }).select(['-draft'])
         return post;
     } catch (error) {
+        console.log(`error getOnePost`)
         console.log(error);
         return error
         // return {}
@@ -42,6 +43,7 @@ export async function getTitlePost(postId: string) {
         console.log(`line 42 post ${post}`)
         return post.title;
     } catch (error) {
+        console.log(`error getTitlePost`)
         console.log(error);
         return ""
     }
