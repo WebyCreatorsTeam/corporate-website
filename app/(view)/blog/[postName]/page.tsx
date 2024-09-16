@@ -54,7 +54,7 @@ interface IPagePost {
 const Page: FC<IPagePost> = async ({ params }) => {
   const { postName } = params;
   console.log(postName)
-  const uri = decodeURIComponent(postName).replaceAll("-", " ");
+  const uri = await decodeURIComponent(postName).replaceAll("-", " ");
   const post = await getOnePost(uri)
 
   // let post
