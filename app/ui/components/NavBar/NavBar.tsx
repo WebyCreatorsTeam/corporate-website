@@ -7,6 +7,7 @@ import { useMediaQuery } from 'react-responsive'
 import Link from 'next/link';
 import Close from './Close';
 import Menu from './Menu';
+import { rubik } from '../../fonts/fonts';
 
 const NavBar: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -36,7 +37,7 @@ const NavBar: FC = () => {
 
   return (
     <header>
-      <nav className='elementWidth'>
+      <nav className={`elementWidth ${rubik.className}`}>
         <button aria-label='menu' title="menu" className='block lg:hidden' onClick={() => setIsOpen(!isOpen)}>{isOpen ? <Close /> : <Menu />}</button>
         <div className="navigation hidden lg:flex">
           <div className="navigation__logo">
@@ -60,7 +61,7 @@ const NavBar: FC = () => {
         </div>
         {/* descktop */}
         <div className='hidden lg:block navigation__contact'>
-          <Link href="tel:+972515183320" >
+          <Link href="tel:+972515183320" className={rubik.className}>
             051-518-3320
           </Link>
         </div>

@@ -7,11 +7,11 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Services />
+      {/* <Services />
       <section className='middle-elements-bkg'>
         <ProjectsSection />
       </section>
-      <UsersFeedbacks />
+      <UsersFeedbacks /> */}
     </main>
   );
 }

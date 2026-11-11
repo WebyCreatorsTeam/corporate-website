@@ -9,78 +9,79 @@
     scroll-behavior: smooth;
 }
 
-header,
-footer {
-    background-color: $sectionEggColor;
-}
+// header,
+// footer {
+//     background-color: $sectionEggColor;
+// }
 
-header {
-    box-shadow: 0 0 5px 1px $shadowColor;
-    height: 80px;
-    width: 100%;
-}
+// header {
+//     box-shadow: 0 0 5px 1px $shadowColor;
+//     height: 80px;
+//     width: 100%;
+// }
 
-footer {
-    box-shadow: 1px 0 5px 1px $shadowColor;
-}
+// footer {
+//     box-shadow: 1px 0 5px 1px $shadowColor;
+// }
 
-h1,
-h2,
-h3,
-h4 {
-    font-weight: bold;
-}
+// h1,
+// h2,
+// h3,
+// h4 {
+//     font-weight: bold;
+// }
 
-h1 {
-    font-size: clamp(2.25rem, 1.786vw + 1.893rem, 3.5rem);
-}
+// h1 {
+//     font-size: clamp(2.25rem, 1.786vw + 1.893rem, 3.5rem);
+// }
 
-h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    color: $purpleColor;
-}
+// h2 {
+//     font-size: 2.5rem;
+//     text-align: center;
+//     color: $purpleColor;
+// }
 
-h3 {
-    font-size: 1.5rem;
-}
+// h3 {
+//     font-size: 1.5rem;
+// }
 
-h4 {
-    font-size: 18px;
-}
+// h4 {
+//     font-size: 18px;
+// }
 
-p {
-    font-size: 18px;
-    margin: 2% 0%;
+// p {
+//     font-size: 18px;
+//     margin: 2% 0%;
 
-    @media screen and (max-width: 768px) {
-        margin: 5% 0%;
-    }
-}
+//     @media screen and (max-width: 768px) {
+//         margin: 5% 0%;
+//     }
+// }
 
-.top-elements-bkg,
-.bottom-elements-bkg,
-.middle-elements-bkg {
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+// .top-elements-bkg,
+// .bottom-elements-bkg,
+// .middle-elements-bkg {
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
 
-.middle-elements-bkg {
-    background-image: url("./components/bkg/proj-back.webp");
-}
+// .middle-elements-bkg {
+//     background-image: url("./components/bkg/proj-back.webp");
+// }
 
 .elementWidth {
     @include windowWidth();
 }
 
+
 @import "./components/navbar";
-@import "./components/hero/hero";
-@import './components/services/services';
-@import "./components/projects/projects";
-@import "./components/feedback/feedbacks";
-@import "./components/form/form";
-@import "./components/about/about";
-@import "./components/faq/FAQ";
-@import "./components/blog/blog";
-@import "./components/post/post";
-@import "./components/footer/footer";
+// @import "./components/hero/hero";
+// @import './components/services/services';
+// @import "./components/projects/projects";
+// @import "./components/feedback/feedbacks";
+// @import "./components/form/form";
+// @import "./components/about/about";
+// @import "./components/faq/FAQ";
+// @import "./components/blog/blog";
+// @import "./components/post/post";
+// @import "./components/footer/footer";
