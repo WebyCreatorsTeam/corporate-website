@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Hero = () => {
     return (
         <section className={`hero elementWidth`}>
-            <section className={`hero__textSection`}>
+            {/* <section className={`hero__textSection`}>
                 <h1>
                     בואו לבנות את ה
                     <span>אתר</span>{" "}
@@ -19,8 +19,8 @@ const Hero = () => {
             </section>
             <Link href="/#projects">
                 לצפיה בפרויקטים שלנו {">"}
-            </Link>
-
+            </Link> */}
+{/* 
             <section className={`hero__imageSection`}>
                 <Image
                     src="/images/hero/hero-web.webp"
@@ -38,7 +38,7 @@ const Hero = () => {
                     className='block sm:hidden'
                     priority
                 />
-            </section>
+            </section> */}
         </section>
     )
 }

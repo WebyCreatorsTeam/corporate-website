@@ -58,8 +58,8 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <main>
           {children}
         </main>
-        <Form />
-        <Footer />
+        {/* <Form /> */}
+        {/* <Footer /> */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-GQWBPL6NKS"></Script>
         <Script src="https://cdn.enable.co.il/licenses/enable-L28217bliq9wyu18-0724-61784/init.js"></Script>
       </body>
